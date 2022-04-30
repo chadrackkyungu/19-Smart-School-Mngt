@@ -1,0 +1,543 @@
+//Fonts
+@import "custom/fonts/fonts";
+
+//Core files
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "variables";
+@import "./node_modules/bootstrap/scss/mixins.scss";
+
+// Structure
+@import "custom/structure/general";
+@import "custom/structure/topbar";
+@import "custom/structure/page-head";
+@import "custom/structure/footer";
+@import "custom/structure/right-sidebar";
+@import "custom/structure/vertical";
+@import "custom/structure/horizontal-nav";
+@import "custom/structure/layouts";
+
+// Components
+@import "custom/components//waves";
+@import "custom/components/alert";
+@import "custom/components/avatar";
+@import "custom/components/helper";
+@import "custom/components/preloader";
+@import "custom/components/forms";
+@import "custom/components/widgets";
+@import "custom/components/demos";
+@import "custom/components/print";
+
+// Plugins
+@import "custom/plugins/custom-scrollbar";
+@import "custom/plugins/calendar";
+@import "custom/plugins/dragula";
+@import "custom/plugins/session-timeout";
+@import "custom/plugins/range-slider";
+@import "custom/plugins/sweatalert2";
+@import "custom/plugins/rating";
+@import "custom/plugins/parsley";
+@import "custom/plugins/select2";
+@import "custom/plugins/bootstrap-touchspin";
+@import "custom/plugins/switch";
+@import "custom/plugins/datepicker";
+@import "custom/plugins/form-editors";
+@import "custom/plugins/form-upload";
+@import "custom/plugins/form-wizard";
+@import "custom/plugins/datatable";
+@import "custom/plugins/responsive-table";
+@import "custom/plugins/table-editable";
+@import "custom/plugins/apexcharts";
+@import "custom/plugins/flot";
+@import "custom/plugins/sparkline-chart";
+@import "custom/plugins/google-map";
+@import "custom/plugins/vector-maps";
+
+// Pages
+@import "custom/pages/ecommerce";
+@import "custom/pages/authentication";
+@import "custom/pages/email";
+@import "custom/pages/coming-soon";
+@import "custom/pages/timeline";
+@import "custom/pages/extras-pages";
+
+body {
+    min-width: initial !important;
+}
+
+// background pages
+.bg-page {
+    color: #fff;
+    background: -webkit-linear-gradient(110deg, #ffffff 40%, rgba(0, 0, 0, 0) 30%), -webkit-radial-gradient(farthest-corner at 0% 0%, #950000c5 70%, #64190e 70%);
+    background: -o-linear-gradient(110deg, #ffffff 40%, rgba(0, 0, 0, 0) 30%), -o-radial-gradient(farthest-corner at 0% 0%, #950000c5 70%, #64190e 70%);
+    background: -moz-linear-gradient(110deg, #ffffff 40%, rgba(0, 0, 0, 0) 30%), -moz-radial-gradient(farthest-corner at 0% 0%, #950000c5 70%, #950000c5 70%);
+    background: linear-gradient(110deg, #ffffff 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #950000c5 70%, #950000c5 70%);
+    height: 100vh !important;
+}
+
+.account-pages {
+    display: grid;
+    place-items: center;
+    gap: 1em;
+    height: 100vh;
+}
+
+.login-page-content {
+    background: white;
+    border-radius: 5px;
+    padding: 2em;
+}
+
+.login-p p {
+    color: #707d8a;
+}
+
+.login-container {
+    width: 100%;
+}
+
+.login-container img {
+    width: 100%;
+}
+
+// Header logo
+.logo-lg {
+    width: 40%;
+    height: 10%
+}
+
+.logo-lg img {
+    width: 100%;
+    height: 100%;
+}
+
+.apex-charts{
+    width: 100%;
+    // min-height: 250px;
+}
+
+.select-file{
+    // background: blue;
+}
+
+:disabled{
+background: green;
+cursor: not-allowed;
+}
+
+
+.st-details-conatiner{
+    display: grid;
+}
+
+.amount-progress {
+    width: 95%;
+    height: 22px;
+    background-color: #e2e2e2;
+    border-radius: 100px; 
+  }
+  progress { 
+    -webkit-appearance: none;
+    appearance: none;
+ }
+
+  progress {
+    border-radius: 100px; 
+    background-color: #F97316;
+    width: 95%;
+    height: 22px;
+  }
+  progress::-webkit-progress-bar {
+    background-color: #F97316;
+    border-radius: 100px; 
+  }
+  progress::-webkit-progress-value {
+    background-color: #F97316;
+    border-radius: 100px; 
+  }
+
+  progress::-moz-progress-bar {
+    background-color: #F97316;
+    border-radius: 100px; 
+  }
+
+//   * for chrome
+  progress::-webkit-progress-bar {
+    background-color: #e2e2e2;
+    border-radius: 100px; 
+}
+
+//   * for chrome
+progress[value]::-webkit-progress-value {
+    background-image:
+         -webkit-linear-gradient(-45deg, 
+                           transparent 33%, rgba(0, 0, 0, .1) 33%, 
+                           rgba(0,0, 0, .1) 66%, transparent 66%),
+         -webkit-linear-gradient(top, 
+                           rgba(255, 255, 255, .25), 
+                           rgba(0, 0, 0, .25)),
+         -webkit-linear-gradient(left, #09c, #f44);
+
+         border-radius: 100px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+  } 
+  
+
+//   * for firefox
+progress[value]::-moz-progress-bar {
+    background-image:
+         -webkit-linear-gradient(-45deg, 
+                           transparent 33%, rgba(0, 0, 0, .1) 33%, 
+                           rgba(0,0, 0, .1) 66%, transparent 66%),
+         -webkit-linear-gradient(top, 
+                           rgba(255, 255, 255, .25), 
+                           rgba(0, 0, 0, .25)),
+         -webkit-linear-gradient(left, #09c, #f44);
+
+         border-radius: 100px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+  }  
+
+
+// * Login Screen
+@media (max-width: 766px) {
+    h4{
+        font-size: 14px;
+    }
+    h2{
+        font-size: 18px;
+    }
+    .icon-mobile-size{
+       width: 50%;
+    }
+    .desktop {
+        display: none
+    }
+    .mobile-form-padding{
+        margin: 0 1em;
+        margin-bottom: 5em;
+    }
+    .btn-back{
+        // margin-left: 1.9em;
+    }
+}
+
+@media (min-width: 768px) {
+    .login-page-content {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .login-page-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    .mobile {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+// ! CSS COLORS
+// * GRAY
+.gray-100 {
+    color: #f8f9fa
+}
+
+.gray-200 {
+    color: #eff2f7
+}
+
+.gray-300 {
+    color: #f6f6f6
+}
+
+.gray-400 {
+    color: #ced4da
+}
+
+.gray-500 {
+    color: #adb5bd
+}
+
+.gray-600 {
+    color: #626c76
+}
+
+.gray-700 {
+    color: #495057
+}
+
+// * GREEN
+.green-100 {
+    color: #86EFAC
+}
+
+.green-200 {
+    color: #86EFAC
+}
+
+.green-300 {
+    color: #86EFAC
+}
+
+.green-400 {
+    color: #4ADE80
+}
+
+.green-500 {
+    color: #22C55E
+}
+
+.green-600 {
+    color: #16A34A
+}
+
+.green-700 {
+    color: #15803D
+}
+
+.green-800 {
+    color: #166534
+}
+
+.green-900 {
+    color: #14532D
+}
+
+
+// * RED
+.red-50 {
+    color: #FEF2F2
+}
+.red-100 {
+    color: #FEE2E2
+}
+
+.red-200 {
+    color: #FECACA
+}
+
+.red-300 {
+    color: #FCA5A5
+}
+
+.red-400 {
+    color: #F87171
+}
+
+.red-500 {
+    color: #EF4444
+}
+
+.red-600 {
+    color: #DC2626
+}
+
+.red-700 {
+    color: #B91C1C
+}
+
+.red-800 {
+    color: #991B1B
+}
+
+.red-900 {
+    color: #7F1D1D
+}
+
+// * ORANGE
+.orange-50 {
+    color: #FFF7ED
+}
+.orange-100 {
+    color: #FFEDD5
+}
+
+.orange-200 {
+    color: #FED7AA
+}
+
+.orange-300 {
+    color: #FDBA74
+}
+
+.orange-400 {
+    color: #FB923C
+}
+
+.orange-500 {
+    color: #F97316
+}
+
+.orange-600 {
+    color: #EA580C
+}
+
+.orange-700 {
+    color: #C2410C
+}
+
+.orange-800 {
+    color: #9A3412
+}
+
+.orange-900 {
+    color: #7C2D12
+}
+
+
+//****************************
+        //BACK-GROUND
+//****************************
+
+// ! BLUE
+.bg-blue-50	    {background-color: #eff6ff}
+.bg-blue-100	{background-color: #dbeafe}
+.bg-blue-200	{background-color: #bfdbfe}
+.bg-blue-300	{background-color: #93c5fd}
+.bg-blue-400	{background-color: #60a5fa}
+.bg-blue-500	{background-color: #3b82f6}
+.bg-blue-600	{background-color: #2563eb}	
+.bg-blue-700	{background-color: #1d4ed8}	
+.bg-blue-800	{background-color: #1e40af}	
+.bg-blue-900	{background-color: #1e3a8a}
+
+
+// * BLACK SLATE
+.bg-slate-50	{background-color: #f8fafc}
+.bg-slate-100	{background-color: #f1f5f9}
+.bg-slate-200	{background-color: #e2e8f0}
+.bg-slate-300	{background-color: #cbd5e1}
+.bg-slate-400	{background-color: #94a3b8}
+.bg-slate-500	{background-color: #64748b}
+.bg-slate-600	{background-color: #475569}
+.bg-slate-700	{background-color: #334155}
+.bg-slate-800	{background-color: #1e293b}
+.bg-slate-900	{background-color: #0f172a}
+
+// * YELLOW
+.bg-yellow-50	{background-color: #fefce8}
+.bg-yellow-100	{background-color: #fef9c3}
+.bg-yellow-200	{background-color: #fef08a}
+.bg-yellow-300	{background-color: #fde047}
+.bg-yellow-400	{background-color: #facc15}
+.bg-yellow-500	{background-color: #eab308}
+.bg-yellow-600	{background-color: #ca8a04}
+.bg-yellow-700	{background-color: #a16207}
+.bg-yellow-800	{background-color: #854d0e}
+.bg-yellow-900	{background-color: #713f12}
+
+
+// * GREEN
+.bg-green-50	{background-color: #f0fdf4}
+.bg-green-100	{background-color: #dcfce7}
+.bg-green-200	{background-color: #bbf7d0}
+.bg-green-300	{background-color: #86efac}
+.bg-green-400	{background-color: #4ade80}	
+.bg-green-500	{background-color: #22c55e}
+.bg-green-600	{background-color: #16a34a}
+.bg-green-700	{background-color: #15803d}
+.bg-green-800	{background-color: #166534}
+.bg-green-900	{background-color: #14532d}
+
+// * PINK
+.bg-pink-50{background-color: #fdf2f8}
+.bg-pink-100{background-color: #fce7f3}
+.bg-pink-200{background-color: #fbcfe8}
+.bg-pink-300{background-color: #f9a8d4}
+.bg-pink-400{background-color: #f472b6}
+.bg-pink-500{background-color: #ec4899}
+.bg-pink-600{background-color: #db2777}
+.bg-pink-700{background-color: #be185d}
+.bg-pink-800{background-color: #9d174d}
+.bg-pink-900{background-color: #831843}
+
+// * BLUE SKY
+.bg-sky-50	{background-color: #f0f9ff}
+.bg-sky-100	{background-color: #e0f2fe}	
+.bg-sky-200	{background-color: #bae6fd}	
+.bg-sky-300	{background-color: #7dd3fc}
+.bg-sky-400	{background-color: #38bdf8}	
+.bg-sky-500	{background-color: #0ea5e9}	
+.bg-sky-600	{background-color: #0284c7}
+.bg-sky-700	{background-color: #0369a1}
+.bg-sky-800	{background-color: #075985}
+.bg-sky-900	{background-color: #0c4a6e}
+
+// * GRAY
+.bg-gray-50	    {background-color: #f9fafb}
+.bg-gray-100	{background-color: #f3f4f6}
+.bg-gray-200	{background-color: #e5e7eb}
+.bg-gray-300	{background-color: #d1d5db}
+.bg-gray-400	{background-color: #9ca3af}
+.bg-gray-500	{background-color: #6b7280}
+.bg-gray-600	{background-color: #4b5563}
+.bg-gray-700	{background-color: #374151}
+.bg-gray-800	{background-color: #1f2937}
+.bg-gray-900	{background-color: #111827}
+
+
+
+
+//****************************
+        //COLOR
+//****************************
+
+// ! PINK
+.clr-pink-50 {color: #fdf2f8}
+.clr-pink-100{color: #fce7f3}
+.clr-pink-200{color: #fbcfe8}
+.clr-pink-300{color: #f9a8d4}
+.clr-pink-400{color: #f472b6}
+.clr-pink-500{color: #ec4899}
+.clr-pink-600{color: #db2777}
+.clr-pink-700{color: #be185d}
+.clr-pink-800{color: #9d174d}
+.clr-pink-900{color: #831843}
+
+// ! BLUE SKY
+.clr-sky-50	    {color: #f0f9ff}
+.clr-sky-100	{color: #e0f2fe}	
+.clr-sky-200	{color: #bae6fd}	
+.clr-sky-300	{color: #7dd3fc}
+.clr-sky-400	{color: #38bdf8}	
+.clr-sky-500	{color: #0ea5e9}	
+.clr-sky-600	{color: #0284c7}
+.clr-sky-700	{color: #0369a1}
+.clr-sky-800	{color: #075985}
+.clr-sky-900	{color: #0c4a6e}
+
+// ! BLUE
+.clr-blue-50	{color: #eff6ff}
+.clr-blue-100	{color: #dbeafe}
+.clr-blue-200	{color: #bfdbfe}
+.clr-blue-300	{color: #93c5fd}
+.clr-blue-400	{color: #60a5fa}
+.clr-blue-500	{color: #3b82f6}
+.clr-blue-600	{color: #2563eb}	
+.clr-blue-700	{color: #1d4ed8}	
+.clr-blue-800	{color: #1e40af}	
+.clr-blue-900	{color: #1e3a8a}
+
+// ! GRAY
+.clr-gray-50	{color: #f9fafb}
+.bg-gray-100	{color: #f3f4f6}
+.clr-gray-200	{color: #e5e7eb}
+.clr-gray-300	{color: #d1d5db}
+.clr-gray-400	{color: #9ca3af}
+.clr-gray-500	{color: #6b7280}
+.bg-gray-600	{color: #4b5563}
+.clr-gray-700	{color: #374151}
+.clr-gray-800	{color: #1f2937}
+.clr-gray-900	{color: #111827}
+

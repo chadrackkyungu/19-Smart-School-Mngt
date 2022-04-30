@@ -1,0 +1,18 @@
+LOGO DESIGN
+https://studio.tailorbrands.com
+
+
+PNG TO ICO ICON favicon
+https://convertio.co/download/beee7a0fcf62a006a4afe5538b9cf96a00f5c9/
+
+React icons
+https://react-icons.github.io/react-icons/
+//=>npm install react-icons --save 
+
+Counter 
+//=> npm i react-countup
+
+Amin Chart 
+=========
+//=> chart.js
+//=> npm i react-chartjs-2

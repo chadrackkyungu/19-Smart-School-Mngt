@@ -1,0 +1,25 @@
+LOGO DESIGN
+https://studio.tailorbrands.com
+
+
+PNG TO ICO ICON favicon
+https://convertio.co/download/beee7a0fcf62a006a4afe5538b9cf96a00f5c9/
+
+React icons
+https://react-icons.github.io/react-icons/
+//=>npm install react-icons --save 
+
+Counter 
+//=> npm i react-countup
+
+Admin Chart  Attention
+===========
+//=> chart.js // don't install these ones , use the one come with the dashboard
+//=> npm i react-chartjs-2
+
+
+# * PAGINATION TABLES
+//=> npm install react-bootstrap-table-next --save
+//=>  npm install react-bootstrap-table2-paginator --save
+# * make sure to import this inside the index.jsx file
+//=> import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';

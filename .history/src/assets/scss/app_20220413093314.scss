@@ -1,0 +1,624 @@
+//Fonts
+@import "custom/fonts/fonts";
+
+//Core files
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "variables";
+@import "./node_modules/bootstrap/scss/mixins.scss";
+
+// Structure
+@import "custom/structure/general";
+@import "custom/structure/topbar";
+@import "custom/structure/page-head";
+@import "custom/structure/footer";
+@import "custom/structure/right-sidebar";
+@import "custom/structure/vertical";
+@import "custom/structure/horizontal-nav";
+@import "custom/structure/layouts";
+
+// Components
+@import "custom/components//waves";
+@import "custom/components/alert";
+@import "custom/components/avatar";
+@import "custom/components/helper";
+@import "custom/components/preloader";
+@import "custom/components/forms";
+@import "custom/components/widgets";
+@import "custom/components/demos";
+@import "custom/components/print";
+
+// Plugins
+@import "custom/plugins/custom-scrollbar";
+@import "custom/plugins/calendar";
+@import "custom/plugins/dragula";
+@import "custom/plugins/session-timeout";
+@import "custom/plugins/range-slider";
+@import "custom/plugins/sweatalert2";
+@import "custom/plugins/rating";
+@import "custom/plugins/parsley";
+@import "custom/plugins/select2";
+@import "custom/plugins/bootstrap-touchspin";
+@import "custom/plugins/switch";
+@import "custom/plugins/datepicker";
+@import "custom/plugins/form-editors";
+@import "custom/plugins/form-upload";
+@import "custom/plugins/form-wizard";
+@import "custom/plugins/datatable";
+@import "custom/plugins/responsive-table";
+@import "custom/plugins/table-editable";
+@import "custom/plugins/apexcharts";
+@import "custom/plugins/flot";
+@import "custom/plugins/sparkline-chart";
+@import "custom/plugins/google-map";
+@import "custom/plugins/vector-maps";
+
+// Pages
+@import "custom/pages/ecommerce";
+@import "custom/pages/authentication";
+@import "custom/pages/email";
+@import "custom/pages/coming-soon";
+@import "custom/pages/timeline";
+@import "custom/pages/extras-pages";
+
+body {
+    min-width: initial !important;
+}
+
+// background pages
+.bg-page {
+    color: #fff;
+    background: -webkit-linear-gradient(110deg, #ffffff 40%, rgba(0, 0, 0, 0) 30%), -webkit-radial-gradient(farthest-corner at 0% 0%, #950000c5 70%, #64190e 70%);
+    background: -o-linear-gradient(110deg, #ffffff 40%, rgba(0, 0, 0, 0) 30%), -o-radial-gradient(farthest-corner at 0% 0%, #950000c5 70%, #64190e 70%);
+    background: -moz-linear-gradient(110deg, #ffffff 40%, rgba(0, 0, 0, 0) 30%), -moz-radial-gradient(farthest-corner at 0% 0%, #950000c5 70%, #950000c5 70%);
+    background: linear-gradient(110deg, #ffffff 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #950000c5 70%, #950000c5 70%);
+    height: 100vh !important;
+}
+
+.account-pages {
+    display: grid;
+    place-items: center;
+    gap: 1em;
+    height: 100vh;
+}
+
+.login-page-content {
+    background: white;
+    border-radius: 5px;
+    padding: 2em;
+}
+
+.login-p p {
+    color: #707d8a;
+}
+
+.login-container {
+    width: 100%;
+}
+
+.login-container img {
+    width: 100%;
+}
+
+// Header logo
+.logo-lg {
+    width: 40%;
+    height: 10%
+}
+
+.logo-lg img {
+    width: 100%;
+    height: 100%;
+}
+
+.apex-charts{
+    width: 100%;
+    // min-height: 250px;
+}
+
+// .cards{
+//     min-height: 50%;
+//     background-color: black
+// }
+
+// * Login Screen
+@media (max-width: 766px) {
+    h4{
+        font-size: 14px;
+    }
+    h2{
+        font-size: 18px;
+    }
+    .icon-mobile-size{
+       width: 50%;
+    }
+    .desktop {
+        display: none
+    }
+}
+
+@media (min-width: 768px) {
+    .login-page-content {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .login-page-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    .mobile {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+// ! CSS COLORS
+// * GRAY
+.gray-100 {
+    color: #f8f9fa
+}
+
+.gray-200 {
+    color: #eff2f7
+}
+
+.gray-300 {
+    color: #f6f6f6
+}
+
+.gray-400 {
+    color: #ced4da
+}
+
+.gray-500 {
+    color: #adb5bd
+}
+
+.gray-600 {
+    color: #626c76
+}
+
+.gray-700 {
+    color: #495057
+}
+
+// * GREEN
+.green-100 {
+    color: #86EFAC
+}
+
+.green-200 {
+    color: #86EFAC
+}
+
+.green-300 {
+    color: #86EFAC
+}
+
+.green-400 {
+    color: #4ADE80
+}
+
+.green-500 {
+    color: #22C55E
+}
+
+.green-600 {
+    color: #16A34A
+}
+
+.green-700 {
+    color: #15803D
+}
+
+.green-800 {
+    color: #166534
+}
+
+.green-900 {
+    color: #14532D
+}
+
+
+// * RED
+.red-50 {
+    color: #FEF2F2
+}
+.red-100 {
+    color: #FEE2E2
+}
+
+.red-200 {
+    color: #FECACA
+}
+
+.red-300 {
+    color: #FCA5A5
+}
+
+.red-400 {
+    color: #F87171
+}
+
+.red-500 {
+    color: #EF4444
+}
+
+.red-600 {
+    color: #DC2626
+}
+
+.red-700 {
+    color: #B91C1C
+}
+
+.red-800 {
+    color: #991B1B
+}
+
+.red-900 {
+    color: #7F1D1D
+}
+
+// * ORANGE
+.orange-50 {
+    color: #FFF7ED
+}
+.orange-100 {
+    color: #FFEDD5
+}
+
+.orange-200 {
+    color: #FED7AA
+}
+
+.orange-300 {
+    color: #FDBA74
+}
+
+.orange-400 {
+    color: #FB923C
+}
+
+.orange-500 {
+    color: #F97316
+}
+
+.orange-600 {
+    color: #EA580C
+}
+
+.orange-700 {
+    color: #C2410C
+}
+
+.orange-800 {
+    color: #9A3412
+}
+
+.orange-900 {
+    color: #7C2D12
+}
+
+
+
+
+
+
+
+
+
+
+//* BACKGROUND-COLOR BLUE
+.bg-primary{
+    background-color: #3b5de7;
+}
+.bg-primary-gradien{
+    background-color: #3b5de7;
+}
+.bg-primary-soft{
+    background-color: #3b5de7;
+}
+
+
+.bg-green{
+    background-color:#45cb85
+}
+.bg-green-gradient{
+    background-color:#45cb85
+}
+.bg-green-soft{
+    background-color:#45cb85
+}
+
+
+.bg-warning{
+    background-color:#eeb902
+}
+.bg-warning-gradient{
+    background-color:#eeb902
+}
+.bg-warning-sof{
+    background-color:#eeb902
+}
+
+
+.bg-info{
+    background-color:rgb(29 78 216);
+}
+.bg-info-gradient{
+    background-color:rgb(59 130 246);
+}
+.bg-info-soft{
+    background-color:rgb(147 197 253);
+}
+
+
+.bg-danger{
+    background-color:#ff715b
+}
+.bg-dange-gradient{
+    background-color:#fca5a5;
+}
+.bg-danger-soft{
+    background-color:#fee2e2;
+}
+
+
+.bg-dark{
+    background-color:#343a40
+}
+.bg-dark-gradient{
+    background-color:#343a40
+}
+.bg-dark-soft{
+    background-color:#343a40
+}
+
+
+.bg-secondary{
+    background-color:#9095ad
+}
+.bg-secondary-gradient{
+    background-color:#9095ad
+}
+.bg-secondary-soft{
+    background-color:#9095ad
+}
+
+
+
+
+//* ROSE
+.bg-rose-100{
+    background-color:rgb(254 205 211);
+}
+.bg-rose-200{
+    background-color:rgb(253 164 175);
+}
+.bg-rose-300{
+    background-color:rgb(251 113 133);
+}
+.bg-rose-400{
+    background-color:rgb(251 113 133);
+}
+.bg-rose-500{
+    background-color:rgb(244 63 94);
+}
+.bg-rose-600{
+    background-color: rgb(225 29 72);
+}
+
+
+
+// * PINK
+.bg-pink-50{background-color: rgb(253 242 248);}
+.bg-pink-100{background-color: rgb(252 231 243)};
+.bg-pink-200{background-color: rgb(251 207 232)};
+.bg-pink-300{background-color: rgb(249 168 212)};
+.bg-pink-400{background-color: rgb(244 114 182)};
+.bg-pink-500{background-color: rgb(236 72 153)};
+.bg-pink-600{background-color: rgb(219 39 119)};
+.bg-pink-700{background-color: rgb(190 24 93)};
+.bg-pink-800{background-color: rgb(157 23 77)};
+.bg-pink-900{background-color: rgb(131 24 67)};
+
+
+//* Funasia 
+.bg-fuchsia-50	{background-color: rgb(253 244 255)}
+.bg-fuchsia-100	{  background-color: rgb(250 232 255);}
+.bg-fuchsia-200	{  background-color: rgb(245 208 254)};
+.bg-fuchsia-300	{  background-color: rgb(240 171 252)};
+.bg-fuchsia-400	{  background-color: rgb(232 121 249)};
+.bg-fuchsia-500	{  background-color: rgb(217 70 239)}
+.bg-fuchsia-600	{  background-color: rgb(192 38 211)}
+.bg-fuchsia-700	{  background-color: rgb(162 28 175)}
+.bg-fuchsia-800	{  background-color: rgb(134 25 143)}
+.bg-fuchsia-900	{  background-color: rgb(112 26 117)};
+
+
+
+// * PURPLE
+.bg-purple-50  {    background-color: rgb(250 245 255)};
+.bg-purple-100 {	background-color: rgb(243 232 255)};
+.bg-purple-200 {	background-color: rgb(233 213 255)};
+.bg-purple-300 {	background-color: rgb(216 180 254)};
+.bg-purple-400 {	background-color: rgb(192 132 252)};
+.bg-purple-500 {	background-color: rgb(168 85 247);}
+.bg-purple-600 {	background-color: rgb(147 51 234);}
+.bg-purple-700 {	background-color: rgb(126 34 206);}
+.bg-purple-800 {	background-color: rgb(107 33 168);}
+.bg-purple-900 {	background-color: rgb(88 28 135)};
+
+
+// * VIOLET
+.bg-violet-50  {    background-color: rgb(245 243 255);}	
+.bg-violet-100 {	background-color: rgb(237 233 254);}	
+.bg-violet-200 {	background-color: rgb(221 214 254);}	
+.bg-violet-300 {	background-color: rgb(196 181 253);}
+.bg-violet-400 {	background-color: rgb(167 139 250);}
+.bg-violet-500 {	background-color: rgb(139 92 246);}	
+.bg-violet-600 {	background-color: rgb(124 58 237);}	
+.bg-violet-700 {	background-color: rgb(109 40 217);}	
+.bg-violet-800 {	background-color: rgb(91 33 182);}
+.bg-violet-900 {	background-color: rgb(76 29 149);}
+
+
+// * INDIGO
+.bg-indigo-50	{background-color: rgb(238 242 255);}	
+.bg-indigo-100	{background-color: rgb(224 231 255);}	
+.bg-indigo-200	{background-color: rgb(199 210 254);}	
+.bg-indigo-300	{background-color: rgb(165 180 252);}	
+.bg-indigo-400	{background-color: rgb(129 140 248);}	
+.bg-indigo-500	{background-color: rgb(99 102 241);}	
+.bg-indigo-600	{background-color: rgb(79 70 229);}
+.bg-indigo-700	{background-color: rgb(67 56 202);}
+.bg-indigo-800	{background-color: rgb(55 48 163);}
+.bg-indigo-900	{background-color: rgb(49 46 129);}
+
+
+// * BLUE
+
+.bg-blue-50	    {background-color: rgb(239 246 255)};
+.bg-blue-100	{background-color: rgb(219 234 254)};
+.bg-blue-200	{background-color: rgb(191 219 254)};
+.bg-blue-300	{background-color: rgb(147 197 253)};
+.bg-blue-400	{background-color: rgb(96 165 250);}
+.bg-blue-500	{background-color: rgb(59 130 246);}
+.bg-blue-600	{background-color: rgb(37 99 235);}	
+.bg-blue-700	{background-color: rgb(29 78 216);}	
+.bg-blue-800	{background-color: rgb(30 64 175);}	
+.bg-blue-900	{background-color: rgb(30 58 138);}
+
+
+// * BLUE SKY
+.bg-sky-50	{background-color: rgb(240 249 255)};
+.bg-sky-100	{background-color: rgb(224 242 254);}	
+.bg-sky-200	{background-color: rgb(186 230 253);}	
+.bg-sky-300	{background-color: rgb(125 211 252);}
+.bg-sky-400	{background-color: rgb(56 189 248);}	
+.bg-sky-500	{background-color: rgb(14 165 233);}	
+.bg-sky-600	{background-color: rgb(2 132 199);}
+.bg-sky-700	{background-color: rgb(3 105 161);}
+.bg-sky-800	{background-color: rgb(7 89 133);}
+.bg-sky-900	{background-color: rgb(12 74 110);}
+
+
+// * CYAN
+.bg-cyan-50	    {background-color: rgb(236 254 255);}	
+.bg-cyan-100	{background-color: rgb(207 250 254);}	
+.bg-cyan-200	{background-color: rgb(165 243 252);}	
+.bg-cyan-300	{background-color: rgb(103 232 249);}	
+.bg-cyan-400	{background-color: rgb(34 211 238);}	
+.bg-cyan-500	{background-color: rgb(6 182 212);}
+.bg-cyan-600	{background-color: rgb(8 145 178);}
+.bg-cyan-700	{background-color: rgb(14 116 144)};
+.bg-cyan-800	{background-color: rgb(21 94 117);}
+.bg-cyan-900	{background-color: rgb(22 78 99);}
+
+// *GREEN TEAL
+.bg-teal-50	    {background-color: rgb(240 253 250);}
+.bg-teal-100	{background-color: rgb(204 251 241)};
+.bg-teal-200	{background-color: rgb(153 246 228)};
+.bg-teal-300	{background-color: rgb(94 234 212);}
+.bg-teal-400	{background-color: rgb(45 212 191);}
+.bg-teal-500	{background-color: rgb(20 184 166);}
+.bg-teal-600	{background-color: rgb(13 148 136);}
+.bg-teal-700	{background-color: rgb(15 118 110);}
+.bg-teal-800	{background-color: rgb(17 94 89);}
+.bg-teal-900	{background-color: rgb(19 78 74)}
+
+// *GREEN EMERALD
+.bg-emerald-50	{background-color: rgb(236 253 245);}
+.bg-emerald-100	{background-color: rgb(209 250 229)}
+.bg-emerald-200	{background-color: rgb(167 243 208)}
+.bg-emerald-300	{background-color: rgb(110 231 183)}
+.bg-emerald-400	{background-color: rgb(52 211 153);}	
+.bg-emerald-500	{background-color: rgb(16 185 129);}	
+.bg-emerald-600	{background-color: rgb(5 150 105);}
+.bg-emerald-700	{background-color: rgb(4 120 87);}
+.bg-emerald-800	{background-color: rgb(6 95 70);}
+.bg-emerald-900	{background-color: rgb(6 78 59)}
+
+// *GREEN
+.bg-green-50	{background-color: rgb(240 253 244);}
+.bg-green-100	{background-color: rgb(220 252 231);}
+.bg-green-200	{background-color: rgb(187 247 208);}
+.bg-green-300	{background-color: rgb(134 239 172);}
+.bg-green-400	{background-color: rgb(74 222 128);}	
+.bg-green-500	{background-color: rgb(34 197 94);}
+.bg-green-600	{background-color: rgb(22 163 74);}
+.bg-green-700	{background-color: rgb(21 128 61);}
+.bg-green-800	{background-color: rgb(22 101 52);}
+.bg-green-900	{background-color: rgb(20 83 45);}
+
+// * GREEN LIMED
+.bg-lime-50	    {background-color: rgb(247 254 231);}
+.bg-lime-100	{background-color: rgb(236 252 203)};
+.bg-lime-200	{background-color: rgb(217 249 157)};
+.bg-lime-300	{background-color: rgb(190 242 100)};
+.bg-lime-400	{background-color: rgb(163 230 53);}
+.bg-lime-500	{background-color: rgb(132 204 22);}
+.bg-lime-600	{background-color: rgb(101 163 13);}
+.bg-lime-700	{background-color: rgb(77 124 15);}	
+.bg-lime-800	{background-color: rgb(63 98 18);}
+.bg-lime-900	{background-color: rgb(54 83 20);}
+
+// * YELLOW
+.bg-yellow-50	{background-color: rgb(254 252 232);}
+.bg-yellow-100	{background-color: rgb(254 249 195});
+.bg-yellow-200	{background-color: rgb(254 240 138});
+.bg-yellow-300	{background-color: rgb(253 224 71)};
+.bg-yellow-400	{background-color: rgb(250 204 21)};
+.bg-yellow-500	{background-color: rgb(234 179 8);}
+.bg-yellow-600	{background-color: rgb(202 138 4);}
+.bg-yellow-700	{background-color: rgb(161 98 7);}
+.bg-yellow-800	{background-color: rgb(133 77 14);}
+.bg-yellow-900	{background-color: rgb(113 63 18);}
+
+
+// * BLACK ZINC
+.bg-zinc-50	{background-color: rgb(250 250 250)};
+.bg-zinc-100	{background-color: rgb(244 244 245);}
+.bg-zinc-200	{background-color: rgb(228 228 231);}
+.bg-zinc-300	{background-color: rgb(212 212 216);}
+.bg-zinc-400	{background-color: rgb(161 161 170);}
+.bg-zinc-500	{background-color: rgb(113 113 122);}
+.bg-zinc-600	{background-color: rgb(82 82 91);
+}.bg-zinc-700	{background-color: rgb(63 63 70);
+}.bg-zinc-800	{background-color: rgb(39 39 42);
+}.bg-zinc-900	{background-color: rgb(24 24 27);}
+
+// * GRAY
+.bg-gray-50	    {background-color: rgb(249 250 251)};
+.bg-gray-100	{background-color: rgb(243 244 246);}
+.bg-gray-200	{background-color: rgb(229 231 235);}
+.bg-gray-300	{background-color: rgb(209 213 219);}
+.bg-gray-400	{background-color: rgb(156 163 175);}
+.bg-gray-500	{background-color: rgb(107 114 128);}
+.bg-gray-600	{background-color: rgb(75 85 99);}
+.bg-gray-700	{background-color: rgb(55 65 81);}
+.bg-gray-800	{background-color: rgb(31 41 55);}
+.bg-gray-900	{background-color: rgb(17 24 39);}
+
+// * BLACK SLATE
+.bg-slate-50	{background-color: rgb(248 250 252);}
+.bg-slate-100	{background-color: rgb(241 245 249);}
+.bg-slate-200	{background-color: rgb(226 232 240);}
+.bg-slate-300	{background-color: rgb(203 213 225);}
+.bg-slate-400	{background-color: rgb(148 163 184);}
+.bg-slate-500	{background-color: rgb(100 116 139);}
+.bg-slate-600	{background-color: rgb(71 85 105);}
+.bg-slate-700	{background-color: rgb(51 65 85);}
+.bg-slate-800	{background-color: rgb(30 41 59);}
+.bg-slate-900	{background-color: rgb(15 23 42);}

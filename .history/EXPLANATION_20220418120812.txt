@@ -1,0 +1,43 @@
+LOGO DESIGN
+https://studio.tailorbrands.com
+
+
+PNG TO ICO ICON favicon
+https://convertio.co/download/beee7a0fcf62a006a4afe5538b9cf96a00f5c9/
+
+React icons
+https://react-icons.github.io/react-icons/
+//=>npm install react-icons --save 
+
+Counter 
+//=> npm i react-countup
+
+Admin Chart  Attention
+===========
+//=> chart.js // don't install these ones , use the one come with the dashboard
+//=> npm i react-chartjs-2
+
+
+# * PAGINATION TABLES
+//=> npm install react-bootstrap-table-next --save
+//=>  npm install react-bootstrap-table2-paginator --save
+# * make sure to import this inside the index.jsx file
+
+#* Toast Notifications
+//=> npm i react-toast-notifications
+//=> npm install --save react-toastify
+
+# *JSON REMOVED
+"react-bootstrap-table2-paginator": "^2.1.2",
+"react-bootstrap-table-next": "^4.0.3",
+
+https://react-bootstrap-table.github.io/react-bootstrap-table2/docs/getting-started.html
+//=> import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+
+https://react-bootstrap-table.github.io/react-bootstrap-table2/docs/basic-pagination.html
+//=> import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
+
+# * FIREBASE DEPLOY AND BUILD
+==> firebase login
+==> npm run build
+==> firebase deploy
