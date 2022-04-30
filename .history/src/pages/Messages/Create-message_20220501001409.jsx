@@ -21,8 +21,8 @@ const CreateMessages = () => {
 
 
   const handleValidSubmit = async(e, std_Input) => {
-    const {  title, recipient, message } = std_Input;
-    const allfield = { title, recipient, message,  timeStamp: serverTimestamp()};
+    const {  name, expense, amount, phone, date, email } = std_Input;
+    const allfield = { name, expense, amount, phone, date, email,  timeStamp: serverTimestamp()};
 
     try {
       await addDoc(collection(Db, "MESSAGES"), { allfield });
@@ -58,7 +58,7 @@ const CreateMessages = () => {
             <AvForm onValidSubmit={(e, v) => {
                handleValidSubmit(e, v);
             }}>
-            <h5 className="mb-5"> Write Messages  </h5>
+            <h5 className="mb-5"> Add New Expenses  </h5>
             <hr />
             <Row> 
               <Col md={12}> 

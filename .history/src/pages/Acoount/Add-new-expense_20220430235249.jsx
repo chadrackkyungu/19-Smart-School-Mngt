@@ -20,6 +20,8 @@ import BackBtn from "../../components/Back-btn";
 const AddExpenses = () => {
 
   const handleValidSubmit = async(e, std_Input) => {
+    console.log(std_Input);
+
     const {  name, expense, amount, phone, date, email } = std_Input;
     const allfield = { name, expense, amount, phone, date, email,  timeStamp: serverTimestamp()};
 
@@ -48,6 +50,7 @@ const AddExpenses = () => {
                    <h5> Add New Expenses </h5>
                 </div>
         </div>
+
 
 
         <Row className="d-flex justify-content-around align-items-center  mobile-form-padding" data-aos="fade-up">       

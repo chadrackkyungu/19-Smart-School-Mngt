@@ -21,8 +21,8 @@ const CreateMessages = () => {
 
 
   const handleValidSubmit = async(e, std_Input) => {
-    const {  title, recipient, message } = std_Input;
-    const allfield = { title, recipient, message,  timeStamp: serverTimestamp()};
+    const {  name, expense, amount, phone, date, email } = std_Input;
+    const allfield = { name, expense, amount, phone, date, email,  timeStamp: serverTimestamp()};
 
     try {
       await addDoc(collection(Db, "MESSAGES"), { allfield });

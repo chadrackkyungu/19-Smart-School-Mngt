@@ -1,26 +1,30 @@
 import React, {useEffect, useState} from "react"
-import { MDBDataTable  } from "mdbreact"
+import { MDBDataTable, MDBDataTableV5  } from "mdbreact"
 import { Row, Col, Card, CardBody} from "reactstrap"
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import Breadcrumb from '../../components/Common/Breadcrumb';
 import { collection, getDocs } from 'firebase/firestore';
 import { Db } from "../../Database/init-firebase";
 import MetaTags from "react-meta-tags";
 
-
-const AllExpenses = () => {
+const AllFeesCollections = () => {
 
   const [dataDb, setData] = useState([]);
 
+  let history = useHistory();
+  
+  function handleClick(prm) {
+    history.push(`/update-payment/${prm}`);
+  }
 
   useEffect(() =>{
     const fetchData = async() =>{
       let list = [];
       try {
-        const querySnapshot = await getDocs(collection(Db, "EXPENSES"));
+        const querySnapshot = await getDocs(collection(Db, "PAYMENTS"));
             querySnapshot.forEach((doc) => {
-            list.push({id: doc.id, ...doc.data().allfield});
+            list.push({id: doc.id, ...doc.data().allfield, clickEvent: () => handleClick(doc.id)});
         })
         setData(list);
       } catch (error) {
@@ -31,11 +35,12 @@ const AllExpenses = () => {
   }, [])
 
   const column = [
-    {label: "Name",field: "name",sort: "asc",width: 150},
-   {label: "Expenses",field: "expense",sort: "asc",width: 150},
-   {label: "Amount",field: "amount",sort: "asc",width: 150},
-   {label: "Phone Number",field: "phone",sort: "asc",width: 150},
-   {label: "Email",field: "email",sort: "asc",width: 150},
+    {label: "ID Numner",field: "ID_Number",sort: "asc",width: 150},
+   {label: "Name",field: "name",sort: "asc",width: 150},
+   {label: "Grade",field: "grade",sort: "asc",width: 150},
+   {label: "Amount Paid",field: "amount",sort: "asc",width: 150},
+   {label: "Payment Method",field: "payment_Method",sort: "asc",width: 150},
+   {label: "Status",field: "Status",sort: "asc",width: 150},
    {label: "Date",field: "date",sort: "asc",width: 150},
   ];
 
@@ -53,12 +58,12 @@ const AllExpenses = () => {
       </MetaTags>
            <Row>
              <Breadcrumb breadcrumbItem="Dashboard
-             " title="All Exepenses" />
+             " title="All Fees Collections" />
           </Row>
 
           <div className="btn-center text-right mt-4 mb-4">
-                  <Link to="/add-new-expense"  className="btn  waves-effect waves-light text-center red-500 shadow-sm  bg-white rounded">
-                    Add New Expenses 
+                  <Link to="/create-student-payment"  className="btn  waves-effect waves-light text-center red-500 shadow-sm  bg-white rounded">
+                    Add New Payment 
                   </Link>
               </div>
 
@@ -76,4 +81,4 @@ const AllExpenses = () => {
   );
 };
 
-export default AllExpenses;
+export default AllFeesCollections;

@@ -14,17 +14,18 @@ import Breadcrumb from '../../components/Common/Breadcrumb';
 import { serverTimestamp, doc, setDoc, addDoc, collection} from 'firebase/firestore';
 import { Db} from '../../Database/init-firebase';
 
-import { successTost_addStd, errorTost} from '../../components/Toast'; //Toast Notification
+import { successTost_addStd, errorTost, successTost_Update_Std, failUpdate_std } from '../../components/Toast'; //Toast Notification
 import BackBtn from "../../components/Back-btn";
 
 const AddExpenses = () => {
 
   const handleValidSubmit = async(e, std_Input) => {
-    const {  name, expense, amount, phone, date, email } = std_Input;
-    const allfield = { name, expense, amount, phone, date, email,  timeStamp: serverTimestamp()};
+    console.log(std_Input);
+    const { ID_Number,Status,amount,date,name,payment_Method,grade } = std_Input;
+    const allfield = { ID_Number,Status,amount,date,name,payment_Method,grade,  timeStamp: serverTimestamp()};
 
     try {
-      await addDoc(collection(Db, "EXPENSES"), { allfield });
+      await addDoc(collection(Db, "PAYMENTS"), { allfield });
      successTost_addStd();
     } catch (error) {
       errorTost()
@@ -48,6 +49,7 @@ const AddExpenses = () => {
                    <h5> Add New Expenses </h5>
                 </div>
         </div>
+
 
 
         <Row className="d-flex justify-content-around align-items-center  mobile-form-padding" data-aos="fade-up">       
@@ -96,12 +98,7 @@ const AddExpenses = () => {
                     />
 
 
-                   
-              </Col> 
-
-              <Col md={6}> 
-              
-              <AvField
+                  <AvField
                       className="mb-3 p-2 bg-white input-style"
                       name="phone"
                       label="Enter Phone Number"
@@ -123,22 +120,45 @@ const AddExpenses = () => {
                       type="date"
                       errorMessage="Please date is required"
                       validate={{ required: { value: true } }}
-                      title="Use MM/DD/YYYY"
                   />
 
-                    <AvField
+              </Col> 
+
+
+              <Col md={6}> 
+              <AvField 
                       className="mb-3 p-2 bg-white input-style"
-                      name="email"
-                      label="E-Mail  "
-                      type="email"
-                      errorMessage="Invalid Email"
-                      validate={{
-                        required: { value: true },
-                        email: { value: true },
-                      }}
-                    />     
-              </Col>
+                      name="date"
+                      label="Date" 
+                      type="date" 
+                      errorMessage="Invalid date of birth"
+                      validate={{ required: { value: true }}}
+                      title="Use MM/DD/YYYY"
+                 /> 
+                                  
              
+              <AvField type="select" name="grade"  label="Class grade" className="mb-3 p-2 bg-white input-style"  validate={{ required: { value: true }}}>
+              {
+                grade_Arrays().map((grade, key) => 
+                  <option key={key}> {grade} </option>
+                )
+              }
+              </AvField>
+
+              <AvField type="select" name="payment_Method" label="Select Payment Method" className="mb-3 p-2 bg-white input-style"   errorMessage="please select payment method"  validate={{ required: { value: true }}}>
+                  <option></option>
+                  <option>CASH</option>
+                  <option>FNB</option>
+                  <option>ABSA</option>
+                  <option>CAPITEC</option>
+                  <option>STANARD BANK</option>
+                  <option>NEDBANK</option>
+                  <option>PAYPAL</option>
+              </AvField>
+                   
+              </Col>
+
+            
                 <FormGroup className="mb-0">
                   <div className="d-flex justify-content-center p-2 text-center">
                     <Button type="submit" color="primary" className="m-2  btn-mobile-width">

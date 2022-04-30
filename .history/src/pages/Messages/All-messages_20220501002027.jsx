@@ -45,7 +45,7 @@ const AllMessages = () => {
              
                   <CardBody>
                     <CardText>
-                      <p className="text-muted">{message.title} </p>
+                      <p className="text-muted"> {message.date} || {message.title} </p>
                     </CardText>
                      <h6 className="green-500">{message.recipient}</h6>
                     <CardText >

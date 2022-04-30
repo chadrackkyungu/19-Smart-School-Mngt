@@ -14,17 +14,18 @@ import Breadcrumb from '../../components/Common/Breadcrumb';
 import { serverTimestamp, doc, setDoc, addDoc, collection} from 'firebase/firestore';
 import { Db} from '../../Database/init-firebase';
 
-import { successTost_addStd, errorTost} from '../../components/Toast'; //Toast Notification
+import { successTost_addStd, errorTost, successTost_Update_Std, failUpdate_std } from '../../components/Toast'; //Toast Notification
 import BackBtn from "../../components/Back-btn";
 
 const AddExpenses = () => {
 
   const handleValidSubmit = async(e, std_Input) => {
-    const {  name, expense, amount, phone, date, email } = std_Input;
-    const allfield = { name, expense, amount, phone, date, email,  timeStamp: serverTimestamp()};
+    console.log(std_Input);
+    const { ID_Number,Status,amount,date,name,payment_Method,grade } = std_Input;
+    const allfield = { ID_Number,Status,amount,date,name,payment_Method,grade,  timeStamp: serverTimestamp()};
 
     try {
-      await addDoc(collection(Db, "EXPENSES"), { allfield });
+      await addDoc(collection(Db, "PAYMENTS"), { allfield });
      successTost_addStd();
     } catch (error) {
       errorTost()
@@ -48,6 +49,7 @@ const AddExpenses = () => {
                    <h5> Add New Expenses </h5>
                 </div>
         </div>
+
 
 
         <Row className="d-flex justify-content-around align-items-center  mobile-form-padding" data-aos="fade-up">       

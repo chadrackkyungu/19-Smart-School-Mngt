@@ -7,14 +7,14 @@ import { collection, getDocs } from 'firebase/firestore';
 import { Db } from "../../Database/init-firebase";
 import MetaTags from "react-meta-tags";
 
-const AllMessages = () => {
+const AllNotice = () => {
   const [dataDb, setData] = useState([]);
 
   useEffect(() =>{
     const fetchData = async() =>{
       let list = [];
       try {
-        const querySnapshot = await getDocs(collection(Db, "MESSAGES"));
+        const querySnapshot = await getDocs(collection(Db, "NOTICE"));
             querySnapshot.forEach((doc) => {
             list.push({id: doc.id, ...doc.data().allfield});
         })
@@ -27,32 +27,35 @@ const AllMessages = () => {
   }, [])
 
   return (
-   <React.Fragment>
+    <React.Fragment>
     <div className="page-content">
       <Row>
-        <Breadcrumb breadcrumbItem="Dashboard" title="All Messages" />
+        <Breadcrumb breadcrumbItem="Dashboard" title="All Notice" />
       </Row>
       <MetaTags>
-        <title> Smart-school | All Messages</title>
+        <title> Smart-school | All Notice</title>
       </MetaTags>
      
       <Row className="subjects-container">
           {
-            dataDb.map((message, i) => {
+            dataDb.map((notice, i) => {
               return(
             <Col mg={12} lg={12}>
               <Card key={i}  data-aos="fade-up">
              
                   <CardBody>
                     <CardText>
-                      <p className="text-muted">{message.title} </p>
+                      <p className="text-muted"> {notice.date} || {notice.title} </p>
                     </CardText>
-                     <h6 className="green-500">{message.recipient}</h6>
+                    <h6 className="green-500">{notice.postedBy}</h6>
+                    
+
                     <CardText >
-                      <small className="text-muted orange-600"> { 5 }min ago  </small>
+                      <small className="text-muted orange-600"> { notice.timeStamp.toString() }min ago  </small>
                     </CardText>
+
                     <CardText>
-                      <small className="text-muted"> {message.message } </small>
+                      <small className="text-muted"> {notice.details } </small>
                     </CardText>
 
                   </CardBody>
@@ -71,4 +74,4 @@ const AllMessages = () => {
   );
 };
 
-export default AllMessages;
+export default AllNotice;
