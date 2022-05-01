@@ -10,9 +10,10 @@ import {
 import { AvForm, AvField } from "availity-reactstrap-validation"
 import MetaTags from "react-meta-tags";
 import Breadcrumb from '../../components/Common/Breadcrumb';
+
 import { serverTimestamp, addDoc, collection} from 'firebase/firestore';
 import { Db } from '../../Database/init-firebase';
-import { successTost_addStd, errorTost } from '../../components/Toast'; 
+import { successTost_addStd, errorTost } from '../../components/Toast'; //Toast Notification
 import  { grade_Arrays } from '../ARRAYS-AND-OBJECTS/Garde-Arrays.jsx';
 import BackBtn from "../../components/Back-btn";
 
@@ -42,7 +43,7 @@ const AddClass = () => {
         </Row>
 
         <div className="d-flex justify-content-between align-items-center mb-4">
-                <BackBtn url_Link="all-classes" />
+                <BackBtn url_Link="all-books" />
                 <div className="btn-center text-center ">
                    <h5> Add Class Time Table </h5>
                 </div>

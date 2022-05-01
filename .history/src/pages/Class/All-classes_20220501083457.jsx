@@ -14,7 +14,7 @@ const AllClasses = () => {
 
     let history = useHistory();
     function handleClick(prm) {
-      history.push(`/update-class/${prm}`);
+      history.push(`/student-detail/${prm}`);
     }
   
     useEffect(() =>{
@@ -46,39 +46,21 @@ const AllClasses = () => {
     ];
   
    const data = { 
-    columns: column,
+    columns: column, //columns Tables
+    // rows: player,  
     rows: dataDb,  
    } 
 
 
   return (
     <React.Fragment>
-    <div className="page-content">
-    <MetaTags >
-   <title>Smart School | Classes Time Table </title>
-   </MetaTags>
-      <Row>
-        <Breadcrumb breadcrumbItem="Dashboard
-        " title="All Classes Time Table" />
-     </Row>
-
-         <div className="btn-center text-right mt-4 mb-4">
-             <Link to="/add-class"  className="btn  waves-effect waves-light text-center red-500 shadow-sm  bg-white rounded">
-               Add New Class 
-             </Link>
-         </div>
-
-   <Row className="d-flex justify-content-around align-items-center">
-    <Col className="col-12">
-      <Card>
-        <CardBody>
-          <MDBDataTable entries={5} entriesOptions={[5, 10, 50]} responsive bordered striped hover  data={data} fullPagination />            
-        </CardBody>
-      </Card>
-    </Col>
-  </Row>
-  </div>
-</React.Fragment>
+      <div className="page-content">
+        <Row>
+          <Breadcrumb breadcrumbItem="Home" title="All Classes" />
+        </Row>
+        <h1> All Classes </h1>
+      </div>
+    </React.Fragment>
   );
 };
 

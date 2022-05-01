@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import {
   Row,
   Col,
@@ -10,18 +10,20 @@ import {
 import { AvForm, AvField } from "availity-reactstrap-validation"
 import MetaTags from "react-meta-tags";
 import Breadcrumb from '../../components/Common/Breadcrumb';
+
 import { serverTimestamp, addDoc, collection} from 'firebase/firestore';
 import { Db } from '../../Database/init-firebase';
-import { successTost_addStd, errorTost } from '../../components/Toast'; 
+import { successTost_addStd, errorTost } from '../../components/Toast'; //Toast Notification
 import  { grade_Arrays } from '../ARRAYS-AND-OBJECTS/Garde-Arrays.jsx';
 import BackBtn from "../../components/Back-btn";
 
 const AddClass = () => {
 
   const handleValidSubmit = async(e, std_Input) => {
+    console.log(std_Input);
 
-    const { teacherName, subject, number, email, grade, gender, weeks, StartTime, EndTime } = std_Input;
-    const allfield = { teacherName, subject, number, email, grade, gender, weeks, StartTime, EndTime,  timeStamp: serverTimestamp()};
+    const {bookName,subject,writerName,publishYear,number,grade,desc } = std_Input;
+    const allfield = {bookName,subject,writerName,publishYear,number,grade,desc,  timeStamp: serverTimestamp()};
     try {
       await addDoc(collection(Db, "CLASSES"), { allfield });
      successTost_addStd();
@@ -42,7 +44,7 @@ const AddClass = () => {
         </Row>
 
         <div className="d-flex justify-content-between align-items-center mb-4">
-                <BackBtn url_Link="all-classes" />
+                <BackBtn url_Link="all-books" />
                 <div className="btn-center text-center ">
                    <h5> Add Class Time Table </h5>
                 </div>
@@ -157,6 +159,7 @@ const AddClass = () => {
                       errorMessage="Please enter end time"
                       validate={{ required: { value: true } }}
                   />
+
                   </Col>  
                    </Row>  
              

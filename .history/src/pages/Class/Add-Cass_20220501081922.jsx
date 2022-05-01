@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import {
   Row,
   Col,
@@ -10,18 +10,20 @@ import {
 import { AvForm, AvField } from "availity-reactstrap-validation"
 import MetaTags from "react-meta-tags";
 import Breadcrumb from '../../components/Common/Breadcrumb';
+
 import { serverTimestamp, addDoc, collection} from 'firebase/firestore';
 import { Db } from '../../Database/init-firebase';
-import { successTost_addStd, errorTost } from '../../components/Toast'; 
+import { successTost_addStd, errorTost } from '../../components/Toast'; //Toast Notification
 import  { grade_Arrays } from '../ARRAYS-AND-OBJECTS/Garde-Arrays.jsx';
 import BackBtn from "../../components/Back-btn";
 
 const AddClass = () => {
 
   const handleValidSubmit = async(e, std_Input) => {
+    console.log(std_Input);
 
-    const { teacherName, subject, number, email, grade, gender, weeks, StartTime, EndTime } = std_Input;
-    const allfield = { teacherName, subject, number, email, grade, gender, weeks, StartTime, EndTime,  timeStamp: serverTimestamp()};
+    const {bookName,subject,writerName,publishYear,number,grade,desc } = std_Input;
+    const allfield = {bookName,subject,writerName,publishYear,number,grade,desc,  timeStamp: serverTimestamp()};
     try {
       await addDoc(collection(Db, "CLASSES"), { allfield });
      successTost_addStd();
@@ -42,7 +44,7 @@ const AddClass = () => {
         </Row>
 
         <div className="d-flex justify-content-between align-items-center mb-4">
-                <BackBtn url_Link="all-classes" />
+                <BackBtn url_Link="all-books" />
                 <div className="btn-center text-center ">
                    <h5> Add Class Time Table </h5>
                 </div>
@@ -83,6 +85,7 @@ const AddClass = () => {
                 name="number"
                 label="Phone number"
                 type="number"
+                placeholder="0812412076"
                 errorMessage="Please phone number require"
                 validate={{
                   required: { value: true },
@@ -98,6 +101,7 @@ const AddClass = () => {
                       name="email"
                       label="E-Mail  "
                       type="email"
+                      placeholder="email"
                       errorMessage="Invalid Email"
                       validate={{
                         required: { value: true },
@@ -109,13 +113,13 @@ const AddClass = () => {
 
               <Col md={6}> 
                                   
-                <AvField type="select" name="grade"  label="Select Grade" className="mb-3 p-2 bg-white input-style"  validate={{ required: { value: true }}}>
-                {
-                  grade_Arrays().map((grade, key) => 
-                    <option key={key}> {grade} </option>
-                  )
-                }
-                </AvField>
+              <AvField type="select" name="grade"  label="Select Grade" className="mb-3 p-2 bg-white input-style"  validate={{ required: { value: true }}}>
+              {
+                grade_Arrays().map((grade, key) => 
+                  <option key={key}> {grade} </option>
+                )
+              }
+              </AvField>
 
                 <AvField type="select" name="gender" label="Select Gender" className="mb-3 p-2 bg-white input-style"   errorMessage="please select gender"  validate={{ required: { value: true }}}>
                       <option>Select gender...</option>
@@ -123,42 +127,6 @@ const AddClass = () => {
                       <option>Female</option>
                       <option>Others</option>
                   </AvField>
-
-                <AvField type="select" name="weeks" label="Select Week" className="mb-3 p-2 bg-white input-style"   errorMessage="please select gender"  validate={{ required: { value: true }}}>
-                      <option>Select week...</option>
-                      <option>Monday</option>
-                      <option>Tuesday</option>
-                      <option>Wensday</option>
-                      <option>Thursday</option>
-                      <option>Friday</option>
-                      <option>Surterday</option>
-                  </AvField>
-
-                  <Row>
-
-                  <Col md={6}> 
-                  <AvField
-                      className="mb-3 p-2 bg-white input-style"
-                      name="StartTime"
-                      label="Start Time"
-                      type="time"
-                      errorMessage="Please enter time"
-                      validate={{ required: { value: true } }}
-                  />
-                  </Col>  
-
-
-                  <Col md={6}> 
-                  <AvField
-                      className="mb-3 p-2 bg-white input-style"
-                      name="EndTime"
-                      label="End Time"
-                      type="time"
-                      errorMessage="Please enter end time"
-                      validate={{ required: { value: true } }}
-                  />
-                  </Col>  
-                   </Row>  
              
               </Col>
 

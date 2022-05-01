@@ -14,7 +14,7 @@ const AllClasses = () => {
 
     let history = useHistory();
     function handleClick(prm) {
-      history.push(`/update-class/${prm}`);
+      history.push(`/class-detail/${prm}`);
     }
   
     useEffect(() =>{
@@ -64,7 +64,7 @@ const AllClasses = () => {
 
          <div className="btn-center text-right mt-4 mb-4">
              <Link to="/add-class"  className="btn  waves-effect waves-light text-center red-500 shadow-sm  bg-white rounded">
-               Add New Class 
+               Add New Student 
              </Link>
          </div>
 

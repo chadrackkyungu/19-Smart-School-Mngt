@@ -102,7 +102,7 @@ const userRoutes = [
 
   { path: "/all-classes", component: AllClasses },
   { path: "/add-class", component: AddClass },
-  { path: "/update-class/:id", component: UpdateClass },
+  { path: "/update-class", component: UpdateClass },
 
   { path: "/all-subjects", component: AllSubjects },
   { path: "/add-subject", component: AddSubjects },
